@@ -1,14 +1,14 @@
 package nl.test.jsonstuff.service;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import nl.test.jsonstuff.models.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import static org.junit.Assert.assertNotNull;
+import java.util.*;
 
 public class TestProductSrivice {
 
@@ -25,9 +25,18 @@ public class TestProductSrivice {
     @Test
     public void parseToJsonTest() {
 
-        assertNotNull(productService.parseToJson(productTree));
+        String treeAsJson = productService.parseToJson(productTree);
+
+        assertEquals("{\"object_id\":\"2131231345\",\"context\":\"nl_NL\",\"name\":\"Product tree\",\"metadata\":{\"publisherSystem\":\"PCP\",\"sourceSystem\":\"STEP\",\"country\":\"NL\",\"language\":\"nl\",\"dateCreated\":\"2018-04-30T13:51:33\",\"date:Modefied\":\"2018-04-30T13:51:33\"},\"tree\":{\"divisions\":[{\"name\":\"div1Name\",\"code\":\"div1Code\",\"businessGroups\":[{\"name\":\"bg11Name\",\"code\":\"bg11Code\",\"businessUnits\":[{\"name\":\"bu11Name\",\"code\":\"bu11Code\",\"mainArticleGroup\":[{\"name\":\"mag111Name\",\"code\":\"mag111Code\"},{\"name\":\"mag112Name\",\"code\":\"mag112Code\"},{\"name\":\"mag113Name\",\"code\":\"mag113Code\"}]},{\"name\":\"bu12Name\",\"code\":\"bu12Code\",\"mainArticleGroup\":[{\"name\":\"mag121Name\",\"code\":\"mag121Code\"},{\"name\":\"mag122Name\",\"code\":\"mag122Code\"}]}]},{\"name\":\"bg12Name\",\"code\":\"bg12Code\",\"businessUnits\":[{\"name\":\"bu21Name\",\"code\":\"bu21Code\"},{\"name\":\"bu22Name\",\"code\":\"bu22Code\"}]}]},{\"name\":\"div2Name\",\"code\":\"div2Code\",\"businessGroups\":[{\"name\":\"bg21Name\",\"code\":\"bg21Code\",\"businessUnits\":[{\"name\":\"bu31Name\",\"code\":\"bu31Code\"},{\"name\":\"bu32Name\",\"code\":\"bu32Code\"}]},{\"name\":\"bg22Name\",\"code\":\"bg22Code\",\"businessUnits\":[{\"name\":\"bu41Name\",\"code\":\"bu41Code\"},{\"name\":\"bu42Name\",\"code\":\"bu42Code\"}]}]}]}}", treeAsJson);
+    }
+
+    @Test
+    public void isValidJsonTest() {
 
 
+        String jsonData = productService.parseToJson(productTree);
+
+        assertTrue(productService.isValidJson("/productTreeSchema.json", jsonData));
     }
 
     private ProductTree generateProductTree() {
@@ -93,7 +102,10 @@ public class TestProductSrivice {
         divs.add(di2);
 
         Tree tree = new Tree(divs);
-        Date date = new Date();
+        Calendar c = new GregorianCalendar();
+        c.set(2018, 3, 30, 13, 51, 33);
+
+        Date date = c.getTime();
 
         Metadata metaData = new Metadata("PCP", "STEP", "NL", "nl", date, date);
         ProductTree productTree = new ProductTree("2131231345", "nl_NL", "Product tree", metaData, tree);

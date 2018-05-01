@@ -2,6 +2,7 @@ package nl.test.jsonstuff.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Metadata {
@@ -43,12 +44,18 @@ public class Metadata {
     }
 
     @JsonProperty("dateCreated")
-    public Date getDateCreated() {
-        return dateCreated;
+    public String getDateCreated() {
+        return formatDate(dateCreated);
     }
 
-    @JsonProperty("date:Modefied")
-    public Date getDateModified() {
-        return dateModified;
+    @JsonProperty("dateModified")
+    public String getDateModified() {
+        return formatDate(dateModified);
+    }
+
+    private String formatDate(Date date) {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+        return sdf.format(date);
     }
 }

@@ -8,7 +8,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BusinessUnit extends OrganizationType {
 
-    @JsonProperty("mainArticleGroup")
+    @JsonProperty("mainArticleGroups")
     List<MainArticleGroup> mainArticleGroups;
 
     public List<MainArticleGroup> getMainArticleGroups() {

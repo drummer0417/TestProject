@@ -1,0 +1,206 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "description": "Schema for the content of data in the S3 bucket under canonical/trees",
+  "additionalProperties": false,
+  "required": [
+    "object_id",
+    "context",
+    "name",
+    "metadata",
+    "tree"
+  ],
+  "properties": {
+    "object_id": {
+      "type": "string",
+      "description": "The unique identifier of this tree"
+    },
+    "context": {
+      "type": "string",
+      "pattern": "^[a-z]{2}_[A-Z]{2}$",
+      "description": "The context of this tree"
+    },
+    "name": {
+      "type": "string"
+    },
+    "metadata": {
+      "$ref": "#/definitions/metadata"
+    },
+    "tree": {
+      "$ref": "#/definitions/financialTree"
+    }
+  },
+  "definitions": {
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publisherSystem",
+        "sourceSystem",
+        "country",
+        "language",
+        "dateCreated",
+        "dateModified"
+      ],
+      "properties": {
+        "publisherSystem": {
+          "type": "string"
+        },
+        "sourceSystem": {
+          "enum": [
+            "STEP"
+          ]
+        },
+        "country": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "financialTree": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "divisions"
+      ],
+      "properties": {
+        "divisions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/division"
+          }
+        }
+      }
+    },
+    "division": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "code",
+        "businessGroups"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "businessGroups": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/businessGroup"
+          }
+        }
+      }
+    },
+    "businessGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "name",
+        "businessUnits"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "businessUnits": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/businessUnit"
+          }
+        }
+      }
+    },
+    "businessUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "name",
+        "mainArticleGroups"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mainArticleGroups": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/mainArticleGroup"
+          }
+        }
+      }
+    },
+    "mainArticleGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "name",
+        "articleGroups"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "articleGroups": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/articleGroup"
+          }
+        }
+      }
+    },
+    "articleGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
