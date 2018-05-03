@@ -5,23 +5,18 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import com.github.fge.jsonschema.core.report.ProcessingReport;
-import com.github.fge.jsonschema.examples.Utils;
 import com.github.fge.jsonschema.main.JsonSchema;
 import com.github.fge.jsonschema.main.JsonSchemaFactory;
-import com.github.fge.jsonschema.main.JsonValidator;
-import nl.test.jsonstuff.models.ProductTree;
+import nl.test.jsonstuff.models.CanonicalDenormalizedProductTreeRoot;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 import static nl.test.jsonstuff.utils.FileReader.readFileFromClasspathAsString;
 
 public class ProductService {
 
 
-    public String parseToJson(ProductTree producTree) {
+    public String parseToJson(CanonicalDenormalizedProductTreeRoot producTree) {
 
         String result = null;
 

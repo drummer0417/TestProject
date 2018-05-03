@@ -35,18 +35,18 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "publisherSystem",
-        "sourceSystem",
+        "publisher_system",
+        "source_system",
         "country",
         "language",
-        "dateCreated",
-        "dateModified"
+        "date_created",
+        "date_modified"
       ],
       "properties": {
-        "publisherSystem": {
+        "publisher_system": {
           "type": "string"
         },
-        "sourceSystem": {
+        "source_system": {
           "enum": [
             "STEP"
           ]
@@ -59,11 +59,11 @@
           "type": "string",
           "pattern": "^[a-z]{2}$"
         },
-        "dateCreated": {
+        "date_created": {
           "type": "string",
           "format": "date-time"
         },
-        "dateModified": {
+        "date_modified": {
           "type": "string",
           "format": "date-time"
         }
@@ -91,7 +91,7 @@
       "required": [
         "name",
         "code",
-        "businessGroups"
+        "business_groups"
       ],
       "properties": {
         "name": {
@@ -101,7 +101,7 @@
           "type": "string",
           "minLength": 1
         },
-        "businessGroups": {
+        "business_groups": {
           "type": "array",
           "minItems": 1,
           "items": {
@@ -116,7 +116,7 @@
       "required": [
         "code",
         "name",
-        "businessUnits"
+        "business_units"
       ],
       "properties": {
         "name": {
@@ -126,7 +126,7 @@
           "type": "string",
           "minLength": 1
         },
-        "businessUnits": {
+        "business_units": {
           "type": "array",
           "minItems": 1,
           "items": {
@@ -141,7 +141,7 @@
       "required": [
         "code",
         "name",
-        "mainArticleGroups"
+        "main_article_groups"
       ],
       "properties": {
         "name": {
@@ -151,7 +151,7 @@
           "type": "string",
           "minLength": 1
         },
-        "mainArticleGroups": {
+        "main_article_groups": {
           "type": "array",
           "minItems": 1,
           "items": {
@@ -166,7 +166,7 @@
       "required": [
         "code",
         "name",
-        "articleGroups"
+        "article_groups"
       ],
       "properties": {
         "name": {
@@ -176,7 +176,7 @@
           "type": "string",
           "minLength": 1
         },
-        "articleGroups": {
+        "article_groups": {
           "type": "array",
           "minItems": 1,
           "items": {
