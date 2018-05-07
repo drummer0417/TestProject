@@ -11,7 +11,6 @@ import java.util.List;
  */
 public class CanonicalDenormalizedProductTreeTree {
 
-
     List<CanonicalDenormalizedProductTreeDivision> divisions = new ArrayList<CanonicalDenormalizedProductTreeDivision>();
 
     @JsonProperty("divisions")
@@ -19,7 +18,7 @@ public class CanonicalDenormalizedProductTreeTree {
         return divisions;
     }
 
-    public void addDivision(CanonicalDenormalizedProductTreeDivision division){
+    public void addDivision(CanonicalDenormalizedProductTreeDivision division) {
         divisions.add(division);
     }
 
