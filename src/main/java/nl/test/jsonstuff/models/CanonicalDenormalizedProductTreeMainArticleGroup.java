@@ -31,7 +31,10 @@ public class CanonicalDenormalizedProductTreeMainArticleGroup implements Canonic
         return articleGroups;
     }
 
-    // add a businessUnit to the businessGroup
+    /**
+     * add a businessUnit to the businessGroup
+     * @param child
+     */
     @Override
     public void addChild(CanonicalDenormalizedProductTreeElement child) {
         if (articleGroups == null) {

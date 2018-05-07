@@ -19,6 +19,10 @@ public class CanonicalDenormalizedProductTreeTree {
         return divisions;
     }
 
+    public void addDivision(CanonicalDenormalizedProductTreeDivision division){
+        divisions.add(division);
+    }
+
     public void setDivisions(List<CanonicalDenormalizedProductTreeDivision> divisions) {
         this.divisions = divisions;
     }

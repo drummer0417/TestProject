@@ -287,7 +287,7 @@ public class TestProductSrivice {
             division =
                     CanonicalDenormalizedProductTreeElementFactory.getCanonicalDenormalizedProductTreeElemen(CanonicalDenormalizedProductTreeElementFactory.DIVISION);
 
-            tree.getDivisions().add((CanonicalDenormalizedProductTreeDivision) addChild(division, div));
+            tree.addDivision((CanonicalDenormalizedProductTreeDivision) addChild(division, div));
         }
 
         productTree.setTree(tree);
@@ -298,6 +298,15 @@ public class TestProductSrivice {
 
     }
 
+    /**
+     * Set the propeties of the given child and add all the children of the given child to the given parent.<br>
+     * By calling this method recursively the whole tree will be generated. <br>
+     * The class to use for the new child will be provided by the CanonicalDenormalizedProductTreeElementFactory
+     *
+     * @param parent
+     * @param newChild
+     * @return
+     */
     private CanonicalDenormalizedProductTreeElement addChild(CanonicalDenormalizedProductTreeElement parent, TestData newChild) {
 
         parent.setCode(newChild.getCode());

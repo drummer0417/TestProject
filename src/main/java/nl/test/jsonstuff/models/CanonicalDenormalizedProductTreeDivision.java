@@ -32,21 +32,24 @@ public class CanonicalDenormalizedProductTreeDivision implements CanonicalDenorm
         return businessGroups;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    // add a businessGroup to the Division
+    /**
+     * add a businessGroup to the Division
+     * @param child
+     */
     @Override
     public void addChild(CanonicalDenormalizedProductTreeElement child) {
         if (businessGroups == null) {
             businessGroups = new ArrayList<CanonicalDenormalizedProductTreeBusinessGroup>();
         }
         businessGroups.add((CanonicalDenormalizedProductTreeBusinessGroup) child);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
 

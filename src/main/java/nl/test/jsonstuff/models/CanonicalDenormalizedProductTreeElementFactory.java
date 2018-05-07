@@ -1,5 +1,8 @@
 package nl.test.jsonstuff.models;
 
+/**
+ * Provide an implementation of CanonicalDenormalizedProductTreeElement
+ */
 public class CanonicalDenormalizedProductTreeElementFactory {
 
 
@@ -10,6 +13,15 @@ public class CanonicalDenormalizedProductTreeElementFactory {
     public static final String ARTICLE_GROUP = "AG";
 
 
+    /**
+     * Provide an implementation of CanonicalDenormalizedProductTreeElement based on the given type.
+     * This class exposed a constant for each valid type
+     * <p>
+     * If no valid type is given, null will be returned
+     *
+     * @param type : one of the above constants
+     * @return a CanonicalDenormalizedProductTreeElement implementation
+     */
     public final static CanonicalDenormalizedProductTreeElement getCanonicalDenormalizedProductTreeElemen(String type) {
 
         switch (type) {

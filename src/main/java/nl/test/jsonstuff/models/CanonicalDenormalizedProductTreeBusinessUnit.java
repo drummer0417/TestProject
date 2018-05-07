@@ -40,7 +40,9 @@ public class CanonicalDenormalizedProductTreeBusinessUnit implements CanonicalDe
         this.code = code;
     }
 
-    // add a businessUnit to the businessGroup
+    /**
+     * add a mainArticleGroup to the businessUnit
+     */
     @Override
     public void addChild(CanonicalDenormalizedProductTreeElement child) {
         if (mainArticleGroups == null) {

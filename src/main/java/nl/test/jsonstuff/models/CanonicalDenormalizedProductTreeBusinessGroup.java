@@ -21,6 +21,9 @@ public class CanonicalDenormalizedProductTreeBusinessGroup implements CanonicalD
         return name;
     }
 
+    /**
+     * add a businessUnit to the businessGroup
+     */
     @JsonProperty("code")
     public String getCode() {
         return code;
@@ -39,7 +42,6 @@ public class CanonicalDenormalizedProductTreeBusinessGroup implements CanonicalD
         this.code = code;
     }
 
-    // add a businessUnit to the businessGroup
     @Override
     public void addChild(CanonicalDenormalizedProductTreeElement child) {
         if (businessUnits == null) {
