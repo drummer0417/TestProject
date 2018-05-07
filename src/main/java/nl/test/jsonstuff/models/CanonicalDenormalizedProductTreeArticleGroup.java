@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Class is used for generation of the ArticleGroup part of productTree json file,
  * ArticleGroup is a child of MainArticleGroup
  */
-public class CanonicalDenormalizedProductTreeArticleGroup {
+public class CanonicalDenormalizedProductTreeArticleGroup implements CanonicalDenormalizedProductTreeElement {
 
     private String name;
     private String code;
@@ -21,6 +21,7 @@ public class CanonicalDenormalizedProductTreeArticleGroup {
         return code;
     }
 
+
     public void setName(String name) {
         this.name = name;
     }
@@ -28,4 +29,11 @@ public class CanonicalDenormalizedProductTreeArticleGroup {
     public void setCode(String code) {
         this.code = code;
     }
+
+    @Override
+    public void addChild(CanonicalDenormalizedProductTreeElement child) {
+        // no implementation as articlegroup does not have children
+    }
+
+
 }

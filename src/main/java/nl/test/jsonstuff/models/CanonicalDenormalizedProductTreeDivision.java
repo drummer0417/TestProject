@@ -11,7 +11,7 @@ import java.util.List;
  * Division is a child of Tree
  */
 
-public class CanonicalDenormalizedProductTreeDivision {
+public class CanonicalDenormalizedProductTreeDivision implements CanonicalDenormalizedProductTreeElement {
 
     private String name;
     private String code;
@@ -39,6 +39,16 @@ public class CanonicalDenormalizedProductTreeDivision {
     public void setCode(String code) {
         this.code = code;
     }
+
+    // add a businessGroup to the Division
+    @Override
+    public void addChild(CanonicalDenormalizedProductTreeElement child) {
+        if (businessGroups == null) {
+            businessGroups = new ArrayList<CanonicalDenormalizedProductTreeBusinessGroup>();
+        }
+        businessGroups.add((CanonicalDenormalizedProductTreeBusinessGroup) child);
+    }
+
 
     public void setBusinessGroups(List<CanonicalDenormalizedProductTreeBusinessGroup> businessGroups) {
         this.businessGroups = businessGroups;

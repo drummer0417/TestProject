@@ -5,10 +5,10 @@
   "metadata": {
     "publisher_system": "PCP",
     "source_system": "STEP",
-    "country": "de",
-    "language": null,
+    "country": "DE",
+    "language": "de",
     "date_created": "2018-04-30T13:51:33+0200",
-    "date_Modified": "2018-04-30T13:51:33+0200"
+    "date_modified": "2018-04-30T13:51:33+0200"
   },
   "tree": {
     "divisions": [
@@ -17,86 +17,52 @@
         "code": "div1Code",
         "business_groups": [
           {
-            "name": "bg11Name",
-            "code": "bg11Code",
+            "name": "bg1Name",
+            "code": "bg1Code",
             "business_units": [
               {
-                "name": "bu11Name",
-                "code": "bu11Code",
+                "name": "bu1Name",
+                "code": "bu1Code",
                 "main_article_groups": [
                   {
-                    "name": "mag111Name",
-                    "code": "mag111Code",
+                    "name": "mag1Name",
+                    "code": "mag1Code",
                     "article_groups": [
                       {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag1Name",
+                        "code": "ag1Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag112Name",
-                    "code": "mag112code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag2Name",
+                        "code": "ag2Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag113Name",
-                    "code": "mag113code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
-                      },
-                      {
-                        "name": "ag2name",
-                        "code": "ag2code"
+                        "name": "ag3Name",
+                        "code": "ag3Code"
                       }
                     ]
                   }
                 ]
               },
               {
-                "name": "bu12Name",
-                "code": "bu12Code",
+                "name": "bu2Name",
+                "code": "bu2Code",
                 "main_article_groups": [
                   {
-                    "name": "mag121Name",
-                    "code": "mag121code",
+                    "name": "mag1Name",
+                    "code": "mag1Code",
                     "article_groups": [
                       {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag1Name",
+                        "code": "ag1Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag122Name",
-                    "code": "mag122code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag2Name",
+                        "code": "ag2Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
+                        "name": "ag3Name",
+                        "code": "ag3Code"
                       }
                     ]
                   }
@@ -105,86 +71,52 @@
             ]
           },
           {
-            "name": "bg12Name",
-            "code": "bg12Code",
+            "name": "bg2Name",
+            "code": "bg2Code",
             "business_units": [
               {
-                "name": "bu21Name",
-                "code": "bu21Code",
+                "name": "bu1Name",
+                "code": "bu1Code",
                 "main_article_groups": [
                   {
-                    "name": "mag111Name",
-                    "code": "mag111Code",
+                    "name": "mag1Name",
+                    "code": "mag1Code",
                     "article_groups": [
                       {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag1Name",
+                        "code": "ag1Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag112Name",
-                    "code": "mag112code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag2Name",
+                        "code": "ag2Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag113Name",
-                    "code": "mag113code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
-                      },
-                      {
-                        "name": "ag2name",
-                        "code": "ag2code"
+                        "name": "ag3Name",
+                        "code": "ag3Code"
                       }
                     ]
                   }
                 ]
               },
               {
-                "name": "bu22Name",
-                "code": "bu22Code",
+                "name": "bu2Name",
+                "code": "bu2Code",
                 "main_article_groups": [
                   {
-                    "name": "mag121Name",
-                    "code": "mag121code",
+                    "name": "mag1Name",
+                    "code": "mag1Code",
                     "article_groups": [
                       {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag1Name",
+                        "code": "ag1Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag122Name",
-                    "code": "mag122code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag2Name",
+                        "code": "ag2Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
+                        "name": "ag3Name",
+                        "code": "ag3Code"
                       }
                     ]
                   }
@@ -199,86 +131,52 @@
         "code": "div2Code",
         "business_groups": [
           {
-            "name": "bg21Name",
-            "code": "bg21Code",
+            "name": "bg3Name",
+            "code": "bg3Code",
             "business_units": [
               {
-                "name": "bu32Name",
-                "code": "bu32Code",
+                "name": "bu3Name",
+                "code": "bu3Code",
                 "main_article_groups": [
                   {
-                    "name": "mag111Name",
-                    "code": "mag111Code",
+                    "name": "mag1Name",
+                    "code": "mag1Code",
                     "article_groups": [
                       {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag1Name",
+                        "code": "ag1Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag112Name",
-                    "code": "mag112code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag2Name",
+                        "code": "ag2Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag113Name",
-                    "code": "mag113code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
-                      },
-                      {
-                        "name": "ag2name",
-                        "code": "ag2code"
+                        "name": "ag3Name",
+                        "code": "ag3Code"
                       }
                     ]
                   }
                 ]
               },
               {
-                "name": "bu32Name",
-                "code": "bu32Code",
+                "name": "bu4Name",
+                "code": "bu4Code",
                 "main_article_groups": [
                   {
-                    "name": "mag121Name",
-                    "code": "mag121code",
+                    "name": "mag1Name",
+                    "code": "mag1Code",
                     "article_groups": [
                       {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag1Name",
+                        "code": "ag1Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag122Name",
-                    "code": "mag122code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag2Name",
+                        "code": "ag2Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
+                        "name": "ag3Name",
+                        "code": "ag3Code"
                       }
                     ]
                   }
@@ -287,86 +185,52 @@
             ]
           },
           {
-            "name": "bg22Name",
-            "code": "bg22Code",
+            "name": "bg4Name",
+            "code": "bg4Code",
             "business_units": [
               {
-                "name": "bu41Name",
-                "code": "bu41Code",
+                "name": "bu3Name",
+                "code": "bu3Code",
                 "main_article_groups": [
                   {
-                    "name": "mag111Name",
-                    "code": "mag111Code",
+                    "name": "mag1Name",
+                    "code": "mag1Code",
                     "article_groups": [
                       {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag1Name",
+                        "code": "ag1Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag112Name",
-                    "code": "mag112code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag2Name",
+                        "code": "ag2Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag113Name",
-                    "code": "mag113code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
-                      },
-                      {
-                        "name": "ag2name",
-                        "code": "ag2code"
+                        "name": "ag3Name",
+                        "code": "ag3Code"
                       }
                     ]
                   }
                 ]
               },
               {
-                "name": "bu42Name",
-                "code": "bu42Code",
+                "name": "bu4Name",
+                "code": "bu4Code",
                 "main_article_groups": [
                   {
-                    "name": "mag121Name",
-                    "code": "mag121code",
+                    "name": "mag1Name",
+                    "code": "mag1Code",
                     "article_groups": [
                       {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag1Name",
+                        "code": "ag1Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "mag122Name",
-                    "code": "mag122code",
-                    "article_groups": [
-                      {
-                        "name": "ag1name",
-                        "code": "ag1code"
+                        "name": "ag2Name",
+                        "code": "ag2Code"
                       },
                       {
-                        "name": "ag2name",
-                        "code": "ag2code"
+                        "name": "ag3Name",
+                        "code": "ag3Code"
                       }
                     ]
                   }

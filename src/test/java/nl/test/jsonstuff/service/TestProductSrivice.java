@@ -14,12 +14,14 @@ public class TestProductSrivice {
 
     ProductService productService = new ProductService();
     CanonicalDenormalizedProductTreeRoot productTree = null;
+    int i = 0;
 
     @Before
     public void setup() {
 
         productTree = generateProductTree();
 
+        i = 0;
     }
 
     @Test
@@ -175,7 +177,7 @@ public class TestProductSrivice {
         divs.add(di2);
 
         CanonicalDenormalizedProductTreeTree tree = new CanonicalDenormalizedProductTreeTree();
-        tree.setDivision(divs);
+        tree.setDivisions(divs);
 
         Calendar c = new GregorianCalendar();
         c.set(2018, 3, 30, 13, 51, 33);
@@ -200,4 +202,168 @@ public class TestProductSrivice {
         return productTree;
     }
 
+    @Test
+    public void testNewOranizationStuff() {
+
+        Calendar c = new GregorianCalendar();
+        c.set(2018, 3, 30, 13, 51, 33);
+
+        Date date = c.getTime();
+        CanonicalDenormalizedProductTreeMetadata metaData = new CanonicalDenormalizedProductTreeMetadata();
+        metaData.setPublisherSystem("PCP");
+        metaData.setSourceSystem("STEP");
+        metaData.setCountry("DE");
+        metaData.setLanguage("de");
+        metaData.setDateCreated(date);
+        metaData.setDateModified(date);
+
+        CanonicalDenormalizedProductTreeRoot productTree = new CanonicalDenormalizedProductTreeRoot();
+        productTree.setObjectID("2312455");
+        productTree.setContext("de_AT");
+        productTree.setName("Product tree");
+        productTree.setMetaData(metaData);
+
+        String[] names = {"div1Name", "bu1Name"};
+        String[] codes = {"div1Code", "bu1Name"};
+        String[] type = {CanonicalDenormalizedProductTreeElementFactory.DIVISION, CanonicalDenormalizedProductTreeElementFactory.BUSINESSG_GROUP};
+
+        TestData treeRoot = new TestData("Tree", null, null, null);
+
+        TestData ag1 = new TestData("AG", "ag1Name", "ag1Code", null);
+        TestData ag2 = new TestData("AG", "ag2Name", "ag2Code", null);
+        TestData ag3 = new TestData("AG", "ag3Name", "ag3Code", null);
+        List<TestData> ag1List = new ArrayList<>();
+        ag1List.add(ag1);
+        ag1List.add(ag2);
+        ag1List.add(ag3);
+
+        TestData mag1 = new TestData("MAG", "mag1Name", "mag1Code", ag1List);
+        List<TestData> mag1List = new ArrayList<>();
+        mag1List.add(mag1);
+
+
+        TestData bu11 = new TestData("BUS", "bu1Name", "bu1Code", mag1List);
+        TestData bu12 = new TestData("BUS", "bu2Name", "bu2Code", mag1List);
+        TestData bu31 = new TestData("BUS", "bu3Name", "bu3Code", mag1List);
+        TestData bu32 = new TestData("BUS", "bu4Name", "bu4Code", mag1List);
+
+        List<TestData> bu1List = new ArrayList<>();
+        bu1List.add(bu11);
+        bu1List.add(bu12);
+
+        List<TestData> bu3List = new ArrayList<>();
+        bu3List.add(bu31);
+        bu3List.add(bu32);
+
+        TestData bg1 = new TestData("BGS", "bg1Name", "bg1Code", bu1List);
+        List<TestData> bg11List = new ArrayList<>();
+        bg11List.add(bg1);
+        TestData bg2 = new TestData("BGS", "bg2Name", "bg2Code", bu1List);
+        List<TestData> bg21List = new ArrayList<>();
+        bg11List.add(bg2);
+
+        TestData bg3 = new TestData("BGS", "bg3Name", "bg3Code", bu3List);
+        List<TestData> bg31List = new ArrayList<>();
+        bg21List.add(bg3);
+        TestData bg4 = new TestData("BGS", "bg4Name", "bg4Code", bu3List);
+        List<TestData> bg41List = new ArrayList<>();
+        bg21List.add(bg4);
+
+
+        TestData div1 = new TestData("SEC", "div1Name", "div1Code", bg11List);
+        TestData div2 = new TestData("SEC", "div2Name", "div2Code", bg21List);
+
+        List<TestData> divs = new ArrayList<>();
+        divs.add(div1);
+        divs.add(div2);
+
+
+        CanonicalDenormalizedProductTreeTree tree = new CanonicalDenormalizedProductTreeTree();
+
+        CanonicalDenormalizedProductTreeElement division = null;
+
+
+        for (TestData div : divs) {
+            division =
+                    CanonicalDenormalizedProductTreeElementFactory.getCanonicalDenormalizedProductTreeElemen(CanonicalDenormalizedProductTreeElementFactory.DIVISION);
+
+            tree.getDivisions().add((CanonicalDenormalizedProductTreeDivision) addChild(division, div));
+        }
+
+        productTree.setTree(tree);
+
+        String treeAsJson = productService.parseToJson(productTree);
+
+        System.out.println("JSON\n" + treeAsJson);
+
+    }
+
+    private CanonicalDenormalizedProductTreeElement addChild(CanonicalDenormalizedProductTreeElement parent, TestData newChild) {
+
+        parent.setCode(newChild.getCode());
+        parent.setName(newChild.getName());
+
+        if (newChild.getChild() != null) {
+
+            for (TestData nextElement : newChild.getChild()) {
+
+                CanonicalDenormalizedProductTreeElement nextChild =
+                        CanonicalDenormalizedProductTreeElementFactory.
+                                getCanonicalDenormalizedProductTreeElemen(nextElement.getType());
+
+                parent.addChild(nextChild);
+
+                this.addChild(nextChild, nextElement);
+            }
+        }
+        return parent;
+    }
+}
+
+class TestData {
+
+
+    String type;
+    String name;
+    String code;
+    List<TestData> child;
+
+    public TestData(String type, String name, String code, List<TestData> child) {
+        this.type = type;
+        this.name = name;
+        this.code = code;
+        this.child = child;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public List<TestData> getChild() {
+        return child;
+    }
+
+    public void setChild(List<TestData> child) {
+        this.child = child;
+    }
 }

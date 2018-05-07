@@ -10,7 +10,7 @@ import java.util.List;
  * BusinessGroup is a child of Division
  */
 
-public class CanonicalDenormalizedProductTreeBusinessGroup {
+public class CanonicalDenormalizedProductTreeBusinessGroup implements CanonicalDenormalizedProductTreeElement {
 
     private String name;
     private String code;
@@ -37,6 +37,15 @@ public class CanonicalDenormalizedProductTreeBusinessGroup {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    // add a businessUnit to the businessGroup
+    @Override
+    public void addChild(CanonicalDenormalizedProductTreeElement child) {
+        if (businessUnits == null) {
+            businessUnits = new ArrayList<CanonicalDenormalizedProductTreeBusinessUnit>();
+        }
+        businessUnits.add((CanonicalDenormalizedProductTreeBusinessUnit) child);
     }
 
     public void setBusinessUnits(List<CanonicalDenormalizedProductTreeBusinessUnit> businessUnits) {

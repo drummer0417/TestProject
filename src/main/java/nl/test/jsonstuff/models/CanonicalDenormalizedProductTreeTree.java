@@ -12,14 +12,14 @@ import java.util.List;
 public class CanonicalDenormalizedProductTreeTree {
 
 
-    List<CanonicalDenormalizedProductTreeDivision> division = new ArrayList<CanonicalDenormalizedProductTreeDivision>();
+    List<CanonicalDenormalizedProductTreeDivision> divisions = new ArrayList<CanonicalDenormalizedProductTreeDivision>();
 
     @JsonProperty("divisions")
-    public List<CanonicalDenormalizedProductTreeDivision> getDivision() {
-        return division;
+    public List<CanonicalDenormalizedProductTreeDivision> getDivisions() {
+        return divisions;
     }
 
-    public void setDivision(List<CanonicalDenormalizedProductTreeDivision> division) {
-        this.division = division;
+    public void setDivisions(List<CanonicalDenormalizedProductTreeDivision> divisions) {
+        this.divisions = divisions;
     }
 }

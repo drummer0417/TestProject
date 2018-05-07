@@ -3,6 +3,7 @@ package nl.test.jsonstuff.models;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
  * BusinessUnit is a child of BusinessGroup
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CanonicalDenormalizedProductTreeBusinessUnit {
+public class CanonicalDenormalizedProductTreeBusinessUnit implements CanonicalDenormalizedProductTreeElement {
 
     private String name;
     private String code;
@@ -38,6 +39,16 @@ public class CanonicalDenormalizedProductTreeBusinessUnit {
     public void setCode(String code) {
         this.code = code;
     }
+
+    // add a businessUnit to the businessGroup
+    @Override
+    public void addChild(CanonicalDenormalizedProductTreeElement child) {
+        if (mainArticleGroups == null) {
+            mainArticleGroups = new ArrayList<CanonicalDenormalizedProductTreeMainArticleGroup>();
+        }
+        mainArticleGroups.add((CanonicalDenormalizedProductTreeMainArticleGroup) child);
+    }
+
 
     public void setMainArticleGroups(List<CanonicalDenormalizedProductTreeMainArticleGroup> mainArticleGroups) {
         this.mainArticleGroups = mainArticleGroups;
