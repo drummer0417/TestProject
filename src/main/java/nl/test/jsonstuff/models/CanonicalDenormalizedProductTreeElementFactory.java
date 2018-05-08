@@ -6,8 +6,8 @@ package nl.test.jsonstuff.models;
 public class CanonicalDenormalizedProductTreeElementFactory {
 
 
-    public static final String DIVISION = "SEC";
-    public static final String BUSINESSG_GROUP = "BGS";
+    public static final String DIVISION = "SC";
+    public static final String BUSINESSG_GROUP = "BG";
     public static final String BUSINESS_UNIT = "BUS";
     public static final String MAIN_ARTICLE_GROUP = "MAG";
     public static final String ARTICLE_GROUP = "AG";

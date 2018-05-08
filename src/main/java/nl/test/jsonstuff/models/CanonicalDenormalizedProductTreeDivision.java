@@ -34,6 +34,7 @@ public class CanonicalDenormalizedProductTreeDivision implements CanonicalDenorm
 
     /**
      * add a businessGroup to the Division
+     *
      * @param child
      */
     @Override
@@ -51,7 +52,6 @@ public class CanonicalDenormalizedProductTreeDivision implements CanonicalDenorm
     public void setCode(String code) {
         this.code = code;
     }
-
 
     public void setBusinessGroups(List<CanonicalDenormalizedProductTreeBusinessGroup> businessGroups) {
         this.businessGroups = businessGroups;
